@@ -9,7 +9,7 @@ const make = (id: string, extra: Partial<Pin> = {}): Pin => ({
   note: '',
   cwd: '/Users/me/repo',
   transcript: `/Users/me/.claude/projects/-Users-me-repo/${id}.jsonl`,
-  backup: `/Users/me/.claude/pinned-sessions/backups/${id}.jsonl`,
+  backup: `/Users/me/.claude/evergreen-sessions/backups/${id}.jsonl`,
   createdAt: '2026-10-01T00:00:00.000Z',
   updatedAt: '2026-10-01T00:00:00.000Z',
   ...extra,

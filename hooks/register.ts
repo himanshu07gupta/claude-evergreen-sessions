@@ -8,7 +8,7 @@ type Paths = { home: string; config: string; dir: string; file: string; backups:
 async function paths($: EngineInterface): Promise<Paths> {
   const home = (await $.env.get('HOME')) ?? ''
   const config = (await $.env.get('CLAUDE_CONFIG_DIR')) || `${home}/.claude`
-  const dir = `${config}/pinned-sessions`
+  const dir = `${config}/evergreen-sessions`
   return { home, config, dir, file: `${dir}/pins.json`, backups: `${dir}/backups` }
 }
 

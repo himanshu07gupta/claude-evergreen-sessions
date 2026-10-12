@@ -9,7 +9,7 @@
 set -euo pipefail
 
 CONFIG="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
-FILE="$CONFIG/pinned-sessions/pins.json"
+FILE="$CONFIG/evergreen-sessions/pins.json"
 
 command -v jq >/dev/null || { echo "cc-pin needs jq (brew install jq)" >&2; exit 1; }
 [[ -s "$FILE" ]] || { echo "No pins yet. Run /pin inside a Claude Code session." >&2; exit 1; }
