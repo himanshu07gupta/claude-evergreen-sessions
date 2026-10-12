@@ -1,0 +1,7 @@
+{
+  "name": "pinned-sessions",
+  "version": "0.1.0",
+  "description": "Pin important Claude Code sessions, list them across every project, and back them up so cleanup never deletes them",
+  "author": { "name": "himanshu07gupta" },
+  "keywords": ["sessions", "pins", "resume", "productivity"]
+}

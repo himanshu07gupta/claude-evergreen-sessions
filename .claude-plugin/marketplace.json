@@ -1,0 +1,6 @@
+{
+  "name": "pinned-sessions",
+  "description": "Pin important Claude Code sessions and resume them from anywhere",
+  "owner": { "name": "himanshu07gupta" },
+  "plugins": [{ "name": "pinned-sessions", "source": "./" }]
+}
