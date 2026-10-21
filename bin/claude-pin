@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# cc-pin: pick a pinned Claude Code session and resume it in the right folder.
+# claude-pin: pick a pinned Claude Code session and resume it in the right folder.
 #
-#   cc-pin          interactive picker (uses fzf when installed)
-#   cc-pin list     print pins
-#   cc-pin <n|id>   resume pin number n, or the one whose id starts with <id>
+#   claude-pin          interactive picker (uses fzf when installed)
+#   claude-pin list     print pins
+#   claude-pin <n|id>   resume pin number n, or the one whose id starts with <id>
 #
 # If cleanup deleted the original transcript, it is restored from the backup first.
 set -euo pipefail
@@ -11,7 +11,7 @@ set -euo pipefail
 CONFIG="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
 FILE="$CONFIG/evergreen-sessions/pins.json"
 
-command -v jq >/dev/null || { echo "cc-pin needs jq (brew install jq)" >&2; exit 1; }
+command -v jq >/dev/null || { echo "claude-pin needs jq (brew install jq)" >&2; exit 1; }
 [[ -s "$FILE" ]] || { echo "No pins yet. Run /pin inside a Claude Code session." >&2; exit 1; }
 
 count=$(jq '.pins | length' "$FILE")
@@ -47,7 +47,7 @@ if [[ "$choice" =~ ^[0-9]+$ ]]; then
 else
   pin=$(jq -c --arg p "$choice" '[.pins[] | select(.id | startswith($p))] | if length == 1 then .[0] else empty end' "$FILE")
 fi
-[[ -n "$pin" ]] || { echo "No single pin matches '$choice'. Try: cc-pin list" >&2; exit 1; }
+[[ -n "$pin" ]] || { echo "No single pin matches '$choice'. Try: claude-pin list" >&2; exit 1; }
 
 field() { jq -r --arg k "$1" '.[$k] // ""' <<<"$pin"; }
 id=$(field id); cwd=$(field cwd); transcript=$(field transcript); backup=$(field backup)

@@ -81,7 +81,7 @@ export function formatList(file: PinFile, home: string, currentId: string): stri
       `     resume: cd ${quote(shortPath(b.cwd, home))} && claude --resume ${b.id}`
     )
   })
-  return `Pinned sessions (${file.pins.length}):\n\n${rows.join('\n\n')}\n\nTip: run \`cc-pin\` from any terminal to pick one and resume it.`
+  return `Pinned sessions (${file.pins.length}):\n\n${rows.join('\n\n')}\n\nTip: run \`claude-pin\` from any terminal to pick one and resume it.`
 }
 
 function quote(path: string): string {

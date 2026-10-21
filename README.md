@@ -11,8 +11,8 @@ If you use Claude Code every day, `claude --resume` quickly fills up with one-of
 | `/pin [note]` | Pin the current session, with an optional note |
 | `/pins` | List pinned sessions from **every** project, each with a ready-to-run resume command |
 | `/unpin [n \| id]` | Remove a pin (defaults to the current session) |
-| `cc-pin` | From any terminal, pick a pin and resume it in the right folder |
-| Auto-backup | Pinned transcripts are copied to a safe place and refreshed whenever the session ends. `cc-pin` restores them if cleanup deleted the original |
+| `claude-pin` | From any terminal, pick a pin and resume it in the right folder |
+| Auto-backup | Pinned transcripts are copied to a safe place and refreshed whenever the session ends. `claude-pin` restores them if cleanup deleted the original |
 
 ## Install
 
@@ -24,11 +24,11 @@ Requires Claude Code 2.1.275 or later. In a Claude Code session:
 
 Answer `y` to add the marketplace, then choose the user scope.
 
-Optional: put the `cc-pin` command on your PATH (it needs `jq`; `fzf` is used when installed):
+Optional: put the `claude-pin` command on your PATH (it needs `jq`; `fzf` is used when installed):
 
 ```bash
 git clone https://github.com/himanshu07gupta/claude-evergreen-sessions ~/.claude-evergreen-sessions
-ln -s ~/.claude-evergreen-sessions/bin/cc-pin /usr/local/bin/cc-pin
+ln -s ~/.claude-evergreen-sessions/bin/claude-pin /usr/local/bin/claude-pin
 ```
 
 ## Usage
@@ -49,10 +49,10 @@ Pinned sessions (2):
 From any terminal:
 
 ```bash
-cc-pin          # interactive picker
-cc-pin list     # print pins
-cc-pin 2        # resume pin #2
-cc-pin 405c     # resume by id prefix
+claude-pin          # interactive picker
+claude-pin list     # print pins
+claude-pin 2        # resume pin #2
+claude-pin 405c     # resume by id prefix
 ```
 
 ## How it works
